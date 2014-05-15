@@ -16,8 +16,8 @@ Usage
 2.  Right now it relies on Greensock's TweenLite for handling cross-browser positioning and smooth updates via `transform`, but its by no means a requirement.  Simply replace the ref with your own.
 
 
-Example:
---------
+Example
+-------
 
 (Vanilla JavaScript version is in `lib`)
 
@@ -36,3 +36,9 @@ ScrollingApp = React.createClass
       div className: 'really-really-tall-element'
 
 ```
+
+
+License
+-------
+
+MIT
