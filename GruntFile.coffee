@@ -119,7 +119,6 @@ module.exports = (grunt) ->
 
          vendor:
             src: [
-               "#{vendor}/jquery.js"
                "#{vendor}/lodash.js"
                "#{vendor}/react.js"
                "#{vendor}/greensock.js"
