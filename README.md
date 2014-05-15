@@ -16,8 +16,8 @@ Requirements
 2.  In your css, make sure that you've applied `position: fixed` to the container class.  This is in order to override the natural scroll behavior while still keeping scrollbar functionality intact.
 
 
-Usage (with Browserify):
-------------------------
+Usage (with Browserify and CoffeeScript.  Vanilla JavaScript version is in `lib`):
+----------------------------------------------------------------------------------
 
 ```
 

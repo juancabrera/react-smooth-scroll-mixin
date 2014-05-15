@@ -40,8 +40,9 @@ var SmoothScrollMixin = {
   animationLoop: function() {
     this.state.currentPosition += ~~(this.state.nextPosition - this.state.currentPosition) * this.state.friction
 
-    TweenLite.set( this.refs.scrollContainer.getDOMNode(),
-       y: -this.state.currentPosition
+    TweenLite.set( this.refs.scrollContainer.getDOMNode(), {
+      y: -this.state.currentPosition
+    })
 
     requestAnimationFrame( this.animationLoop )
   },
