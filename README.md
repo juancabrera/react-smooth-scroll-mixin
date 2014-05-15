@@ -8,7 +8,7 @@ Provides smooth, hardware-accellerated ease-based scrolling for container elemen
 Check out an example here: https://smoothscrollmixin.firebaseapp.com/
 
 
-Requirements
+Usage
 ------------
 
 1.  Make sure that the container that you would like to scroll has a ref named `scrollContainer`; and
@@ -16,8 +16,10 @@ Requirements
 2.  In your css, make sure that you've applied `position: fixed` to the container class.  This is in order to override the natural scroll behavior while still keeping scrollbar functionality intact.
 
 
-Usage (with Browserify and CoffeeScript.  Vanilla JavaScript version is in `lib`):
-----------------------------------------------------------------------------------
+Example:
+--------
+
+(Vanilla JavaScript version is in `lib`)
 
 ```
 
