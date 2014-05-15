@@ -5,6 +5,9 @@ Provides smooth, hardware-accellerated ease-based scrolling for container elemen
 
 (Right now it relies on Greensock's TweenLite for handling cross-browser positioning and smooth updates via `transform`, but its by no means a requirement.  Simply replace the ref with your own.)
 
+Check out an example here: https://smoothscrollmixin.firebaseapp.com/
+
+
 Requirements
 ------------
 
@@ -13,8 +16,8 @@ Requirements
 2.  In your css, make sure that you've applied `position: fixed` to the container class.  This is in order to override the natural scroll behavior while still keeping scrollbar functionality intact.
 
 
-Example use with Browserify:
-----------------------------
+Usage (with Browserify):
+------------------------
 
 ```
 
