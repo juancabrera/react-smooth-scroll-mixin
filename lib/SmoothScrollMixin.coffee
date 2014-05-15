@@ -1,16 +1,17 @@
 ###*
- * Provides ease-based scrolling to containers with css position:fixed
+ * Provides smooth, hardware-accellerated ease-based scrolling for container
+ * elements by normalizing scroll behavior across different browsers / platforms.
+ * Works great for parallax, or simply browsing a document.
  *
- * @author Christopher Pappas <damassi.pappas@gmail.com>
- * @date   5.2.14
+ * @author Christopher Pappas <chris@wintr.us>
+ * @date   5.14.14
 ###
-
 
 SmoothScrollMixin =
 
    getInitialState: ->
       return {
-         friction: .3
+         friction: .2
          nextPosition: 0
          currentPosition: 0
       }
