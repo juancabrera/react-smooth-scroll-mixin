@@ -9,7 +9,7 @@ SmoothScrollMixin =
 
    getInitialState: ->
       return {
-         friction: .3
+         friction: .2
          nextPosition: 0
          currentPosition: 0
       }
