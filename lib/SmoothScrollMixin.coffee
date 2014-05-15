@@ -1,7 +1,7 @@
 ###*
  * Provides ease-based scrolling to containers with css position:fixed
  *
- * @author Christopher Pappas <chris@wintr.us>
+ * @author Christopher Pappas <damassi.pappas@gmail.com>
  * @date   5.2.14
 ###
 

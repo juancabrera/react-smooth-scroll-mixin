@@ -3,7 +3,7 @@ SmoothScroll React.js Mixin
 
 Provides smooth, hardware-accellerated ease-based scrolling for container elements by normalizing scroll behavior across different browsers / platforms.   Works great for parallax, or simply browsing a document.
 
-Right now it relies on Greensocks TweenLite for handling cross-browser positioning and smooth updates, but its by no means a requirement.  Simply replace that ref with your own.
+(Right now it relies on Greensock's TweenLite for handling cross-browser positioning and smooth updates via `transform`, but its by no means a requirement.  Simply replace the ref with your own.)
 
 Requirements
 ------------
