@@ -18,6 +18,7 @@ SmoothScrollMixin =
 
 
    componentDidMount: ->
+      @setupStyles()
       @updateHeight()
       @animationLoop()
       @forceUpdate()
@@ -27,6 +28,11 @@ SmoothScrollMixin =
    componentDidUpdate: ->
       @updateHeight()
       window.addEventListener 'scroll', @onScroll
+
+
+
+   setupStyles: ->
+      @refs.scrollContainer.getDOMNode().style.position = 'fixed'
 
 
 

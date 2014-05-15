@@ -19,6 +19,7 @@ var SmoothScrollMixin = {
 
 
   componentDidMount: function() {
+    this.setupStyles()
     this.updateHeight()
     this.animationLoop()
     this.forceUpdate()
@@ -31,8 +32,13 @@ var SmoothScrollMixin = {
   },
 
 
+  setupStyles: function() {
+    this.refs.scrollContainer.getDOMNode().style.position = 'fixed'
+  },
+
+
   updateHeight: function() {
-    var $container = thisrefs.scrollContainer.getDOMNode()
+    var $container = this.refs.scrollContainer.getDOMNode()
     $container.parentNode.style.height = $container.offsetHeight + 'px'
   },
 
