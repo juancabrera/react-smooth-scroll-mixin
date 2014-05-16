@@ -23,7 +23,7 @@ Example
 
 ```
 
-SmoothScrollMixing = require './SmoothScrollMixin.coffee'
+SmoothScrollMixin = require './SmoothScrollMixin.coffee'
 
 ScrollingApp = React.createClass
 
