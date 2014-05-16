@@ -19,16 +19,16 @@ SmoothScrollMixin =
 
 
    componentDidMount: ->
+      window.addEventListener 'scroll', @onScroll
+
       @setupStyles()
       @updateHeight()
       @animationLoop()
-      @forceUpdate()
 
 
 
    componentDidUpdate: ->
       @updateHeight()
-      window.addEventListener 'scroll', @onScroll
 
 
 
@@ -57,8 +57,8 @@ SmoothScrollMixin =
 
 
    onScroll: ->
-      @state.nextPosition = window.scrollY
-      @forceUpdate()
+      @setState
+         nextPosition: window.scrollY
 
 
 module.exports = SmoothScrollMixin

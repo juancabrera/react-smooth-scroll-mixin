@@ -15,6 +15,7 @@ ScrollItem        = require './ScrollItem.coffee'
 
 Scroller = React.createClass
 
+   displayName: 'Scroller'
 
    mixins: [SmoothScrollMixin]
 
@@ -31,21 +32,34 @@ Scroller = React.createClass
 
 
 
-   onClick: ->
+   onAddBtnClick: ->
       @state.scrollItems.push { name: "Item #{@state.scrollItems.length}" }
       @forceUpdate()
+
+
+
+   deleteItemByIndex: (index) ->
+      items = _.without @state.scrollItems, @state.scrollItems[index]
+      @setState
+         scrollItems: items
 
 
 
    render: ->
       {div, button} = DOM
 
+      scrollItems = @state.scrollItems.map (item, index) =>
+         ScrollItem
+            name: item.name,
+            index: index
+            backgroundColor: item.backgroundColor
+            deleteItemByIndex: @deleteItemByIndex
+
       div class: 'ui-container',
-         button onClick: @onClick, 'Add additional item'
+         button onClick: @onAddBtnClick, 'Add additional item'
 
          div class: 'scroll-container', ref: 'scrollContainer',
-            @state.scrollItems.map (item) ->
-               ScrollItem name: item.name
+            scrollItems
 
 
 module.exports = Scroller
