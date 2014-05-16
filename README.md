@@ -9,7 +9,7 @@ Check out an example here: https://smoothscrollmixin.firebaseapp.com/
 Usage
 ------------
 
-1.  Make sure that the container that you would like to scroll has a ref named `scrollContainer`; and
+1.  Make sure that the container that you would like to scroll has a ref named `scrollContainer`.
 
 2.  Right now it relies on Greensock's TweenLite for handling cross-browser positioning and smooth updates via `transform`, but its by no means a requirement.  Simply replace the ref with your own.
 
