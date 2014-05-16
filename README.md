@@ -57,6 +57,7 @@ Development Tasks
 -----------------
 
 - For development: `grunt dev` then navigate to `http://localhost:3001` (or IP address).
+- Copy mixin to the `lib` folder via `grunt lib`
 
 
 
