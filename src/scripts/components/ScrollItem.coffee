@@ -8,12 +8,12 @@ ScrollItem = React.createClass
 
 
    onClick: (event) ->
-      $item = @getDOMNode()
-      $item.style.backgroundColor = 'red'
-
       @props.deleteItemByIndex @props.index
 
       return
+
+      $item = @getDOMNode()
+      $item.style.backgroundColor = 'red'
 
       TweenMax.to $item, .4,
          height: 0

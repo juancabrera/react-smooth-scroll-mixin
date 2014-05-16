@@ -20,16 +20,16 @@ var SmoothScrollMixin = {
 
 
   componentDidMount: function() {
+    window.addEventListener( 'scroll', this.onScroll )
+
     this.setupStyles()
     this.updateHeight()
     this.animationLoop()
-    this.forceUpdate()
   },
 
 
   componentDidUpdate: function() {
     this.updateHeight()
-    window.addEventListener( 'scroll', this.onScroll )
   },
 
 
@@ -59,8 +59,9 @@ var SmoothScrollMixin = {
 
 
   onScroll: function() {
-    this.state.nextPosition = window.scrollY
-    this.forceUpdate()
+    @setState( {
+      nextPosition: window.scrollY
+    })
   }
 }
 
