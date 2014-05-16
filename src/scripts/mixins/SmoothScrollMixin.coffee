@@ -49,7 +49,7 @@ SmoothScrollMixin =
       @state.currentPosition += ~~(@state.nextPosition - @state.currentPosition) * @state.friction
       @state.scrollPercent    = ~~(@state.currentPosition / (parseInt($container.parentNode.style.height) - window.innerHeight) * 100)
 
-      TweenLite.set @refs.scrollContainer.getDOMNode(),
+      TweenLite.set $container,
          y: -@state.currentPosition
 
       requestAnimationFrame @animationLoop
