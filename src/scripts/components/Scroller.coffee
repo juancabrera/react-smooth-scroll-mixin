@@ -9,7 +9,7 @@
 ###
 
 DOM               = require '../utils/DOM.coffee'
-SmoothScrollMixin = require '../mixins/SmoothScrollMixin'
+SmoothScrollMixin = require '../mixins/SmoothScrollMixin.coffee'
 ScrollItem        = require './ScrollItem.coffee'
 
 

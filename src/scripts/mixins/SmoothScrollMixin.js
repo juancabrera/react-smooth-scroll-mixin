@@ -44,7 +44,10 @@ var SmoothScrollMixin = {
 
 
   animationLoop: function() {
+    var $container = this.refs.scrollContainer.getDOMNode()
+
     this.state.currentPosition += ~~(this.state.nextPosition - this.state.currentPosition) * this.state.friction
+    this.state.scrollPercent    = ~~(this.state.currentPosition / (parseInt($container.parentNode.style.height) - window.innerHeight) * 100)
 
     TweenLite.set( this.refs.scrollContainer.getDOMNode(), {
       y: -this.state.currentPosition
