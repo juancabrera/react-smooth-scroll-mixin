@@ -39,9 +39,8 @@ Scroller = React.createClass
 
 
    deleteItemByIndex: (index) ->
-      items = _.without @state.scrollItems, @state.scrollItems[index]
       @setState
-         scrollItems: items
+         scrollItems: _.without @state.scrollItems, @state.scrollItems[index]
 
 
 
