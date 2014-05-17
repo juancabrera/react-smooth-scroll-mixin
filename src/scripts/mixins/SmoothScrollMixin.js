@@ -59,7 +59,7 @@ var SmoothScrollMixin = {
 
 
   onScroll: function() {
-    @setState( {
+    this.setState({
       nextPosition: window.scrollY
     })
   }
