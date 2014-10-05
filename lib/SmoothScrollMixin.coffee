@@ -9,56 +9,51 @@
 
 SmoothScrollMixin =
 
-   getInitialState: ->
-      return {
-         friction: .2
-         nextPosition: 0
-         currentPosition: 0
-         scrollPercent: 0
-      }
+  getInitialState: ->
+    return {
+      friction: .2
+      nextPosition: 0
+      currentPosition: 0
+      scrollPercent: 0
+    }
 
 
-   componentDidMount: ->
-      window.addEventListener 'scroll', @onScroll
+  componentDidMount: ->
+    window.addEventListener 'scroll', @onScroll
 
-      @setupStyles()
-      @updateHeight()
-      @animationLoop()
-
-
-
-   componentDidUpdate: ->
-      @updateHeight()
+    @setupStyles()
+    @updateHeight()
+    @animationLoop()
 
 
-
-   setupStyles: ->
-      @refs.scrollContainer.getDOMNode().style.position = 'fixed'
-
+  componentDidUpdate: ->
+    @updateHeight()
 
 
-   updateHeight: ->
-      $container = @refs.scrollContainer.getDOMNode()
-      $container.parentNode.style.height = $container.offsetHeight + 'px'
+  setupStyles: ->
+    @refs.scrollContainer.getDOMNode().style.position = 'fixed'
 
 
+  updateHeight: ->
+    $container = @refs.scrollContainer.getDOMNode()
+    $container.parentNode.style.height = $container.offsetHeight + 'px'
 
-   animationLoop: ->
-      $container = @refs.scrollContainer.getDOMNode()
 
-      @state.currentPosition += ~~(@state.nextPosition - @state.currentPosition) * @state.friction
-      @state.scrollPercent    = ~~(@state.currentPosition / (parseInt($container.parentNode.style.height) - window.innerHeight) * 100)
+  animationLoop: ->
+    $container = @refs.scrollContainer.getDOMNode()
 
-      TweenLite.set $container,
-         y: -@state.currentPosition
+    @state.currentPosition += ~~(@state.nextPosition - @state.currentPosition) * @state.friction
+    @state.scrollPercent    = ~~(@state.currentPosition / (parseInt($container.parentNode.style.height) - window.innerHeight) * 100)
 
-      requestAnimationFrame @animationLoop
+    TweenLite.set $container,
+      y: -@state.currentPosition
 
+    requestAnimationFrame @animationLoop
 
 
    onScroll: ->
-      @setState
-         nextPosition: window.scrollY
+    @setState
+      nextPosition: window.scrollY
 
 
 module.exports = SmoothScrollMixin
