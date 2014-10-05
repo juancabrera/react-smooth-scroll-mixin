@@ -15,50 +15,45 @@ ScrollItem        = require './ScrollItem.coffee'
 
 Scroller = React.createClass
 
-   displayName: 'Scroller'
+  displayName: 'Scroller'
 
-   mixins: [SmoothScrollMixin]
+  mixins: [SmoothScrollMixin]
 
+  getInitialState: ->
+    return {
+      scrollItems: []
+    }
 
-   getInitialState: ->
-      return {
-         scrollItems: []
-      }
-
-
-   componentWillMount: ->
-      @setState
-         scrollItems: @props.scrollItems
+  componentWillMount: ->
+    @setState
+      scrollItems: @props.scrollItems
 
 
-
-   onAddBtnClick: ->
-      @state.scrollItems.push { name: "Item #{@state.scrollItems.length}" }
-      @forceUpdate()
-
+  onAddBtnClick: ->
+    @state.scrollItems.push { name: "Item #{@state.scrollItems.length}" }
+    @forceUpdate()
 
 
-   deleteItemByIndex: (index) ->
-      @setState
-         scrollItems: _.without @state.scrollItems, @state.scrollItems[index]
-
+  deleteItemByIndex: (index) ->
+    @setState
+      scrollItems: _.without @state.scrollItems, @state.scrollItems[index]
 
 
    render: ->
-      {div, button} = DOM
+    {div, button} = DOM
 
-      scrollItems = @state.scrollItems.map (item, index) =>
-         ScrollItem
-            name: item.name,
-            index: index
-            backgroundColor: item.backgroundColor
-            deleteItemByIndex: @deleteItemByIndex
+    scrollItems = @state.scrollItems.map (item, index) =>
+      ScrollItem
+        name: item.name,
+        index: index
+        backgroundColor: item.backgroundColor
+        deleteItemByIndex: @deleteItemByIndex
 
-      div class: 'ui-container',
-         button onClick: @onAddBtnClick, 'Add additional item'
+    div class: 'ui-container',
+      button onClick: @onAddBtnClick, 'Add additional item'
 
-         div class: 'scroll-container', ref: 'scrollContainer',
-            scrollItems
+      div class: 'scroll-container', ref: 'scrollContainer',
+        scrollItems
 
 
 module.exports = Scroller
