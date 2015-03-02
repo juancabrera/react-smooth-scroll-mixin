@@ -25,5 +25,5 @@ node_modules/
 bower_components/
 
 # Project folders
-dist/
+public/
 
