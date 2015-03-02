@@ -265,7 +265,6 @@ module.exports = (grunt) ->
          dev:
             options:
                style: "expanded"
-               sourcemap: true
 
             files: [{
                src: ["#{sources}/styles/main.scss"]
@@ -275,7 +274,6 @@ module.exports = (grunt) ->
          dist:
             options:
                style: "compressed"
-               sourcemap: false
 
             files: [{
                src: "#{sources}/styles/main.scss"
